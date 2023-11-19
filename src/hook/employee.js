@@ -12,11 +12,13 @@ const [selectEmp,setSelectEmp] = useState({});
 const [reload,setreload] =useState(false);
 
 useEffect(()=>{
-  axios.get("http://localhost:8080/api/v1/employee")
-  .then(res=>setData(res.data))
+  axios.get("http://localhost:8080/api/v1/employee?size=10&page=0")
+  .then(res=>setData(res.data.content))
 },[reload])
+
     return <MyContext.Provider value={{
         data,
+        setData,
         openDeleteCard,
         setOpenDeleteCard,
         openUpdateCard,

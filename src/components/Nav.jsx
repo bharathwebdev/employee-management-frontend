@@ -10,6 +10,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AddIcon from '@mui/icons-material/Add';
 import { MyContext } from '../hook/employee';
+import { Button } from '@mui/material';
+import axios from 'axios';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -54,7 +56,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchAppBar() {
-    const {openAddCard,setOpenAddCard} = React.useContext(MyContext);
+    const {openAddCard,setOpenAddCard,setData} = React.useContext(MyContext);
+    const [name,setname] = React.useState(null);
+    const handleChange = (e)=>{
+    setname(e.target.value);
+    }
+    const handleSearch = ()=>{
+      axios.get(`http://localhost:8080/api/v1/employee/user?name=${name}&size=${10}`)
+      .then(res=>setData(res.data));
+    }
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -93,10 +104,14 @@ export default function SearchAppBar() {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
+            className='rounded-lg'
+            onChange={handleChange}
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
+              <button  className={`border-2 border-black px-[1rem] py-[0.5rem]  text-white bg-black ml-[2rem] `} onClick={handleSearch} disabled={(name==null || name=="" )} >Search</button>
           </Search>
+        
         </Toolbar>
       </AppBar>
     </Box>

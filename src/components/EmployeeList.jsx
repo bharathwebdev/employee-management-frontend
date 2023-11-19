@@ -14,8 +14,8 @@ function EmployeeList() {
      {openUpdateCard &&  <UpdateCard/>}
      {openAddCard && <AddCard/>}
         <ul role="list" class="divide-y divide-gray-100">
-            {
-                data.map(data=>{
+            {data.length >0 &&
+                 data.map(data=>{
 return <EmployeeCard data={data}/>
                 })
             }

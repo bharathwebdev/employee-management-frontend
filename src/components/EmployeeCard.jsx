@@ -23,7 +23,7 @@ function EmployeeCard(data) {
     <li class="flex justify-between gap-x-6 py-5">
     <div class="flex min-w-0 gap-x-4">
         <Avatar class="h-12 w-12 text-center text-[2rem]  leading-10 flex-none rounded-full bg-gray-50" alt={fullName} src='#'/>
-      {/* <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""/> */}
+     
       <div class="min-w-0 flex-auto">
         <p class="text-sm font-semibold leading-6 text-gray-900 text-white">{fullName}</p>
         <p class="mt-1 truncate text-xs leading-5 text-gray-500 text-white">{department}</p>
