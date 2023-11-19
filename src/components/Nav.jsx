@@ -94,9 +94,12 @@ export default function SearchAppBar() {
           component="div"
           className='rounded-md border-2 border-white px-[1rem] py-0 cursor-pointer'
           sx={{display: { xs: 'none', sm: 'block' }}}
-          onClick={()=>console.log("hi")}
+          onClick={()=>setOpenAddCard(true)}
           >
-              Add <AddIcon/>
+        
+            Add <AddIcon/>
+        
+      
 
           </Typography>
           <Search>
