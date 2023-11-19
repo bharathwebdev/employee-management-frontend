@@ -32,7 +32,7 @@ function UpdateCard() {
      }
 
      console.log(updatedEmp)
-     axios.put("http://localhost:8080/api/v1/employee",updatedEmp)
+     axios.put("https://employee-management-vqs3.onrender.com/api/v1/employee",updatedEmp)
      .then(res=>res.data)
      .finally(res=>
         {

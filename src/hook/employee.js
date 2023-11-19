@@ -12,7 +12,7 @@ const [selectEmp,setSelectEmp] = useState({});
 const [reload,setreload] =useState(false);
 
 useEffect(()=>{
-  axios.get("http://localhost:8080/api/v1/employee?size=10&page=0")
+  axios.get("https://employee-management-vqs3.onrender.com/api/v1/employee?size=10&page=0")
   .then(res=>setData(res.data.content))
 },[reload])
 

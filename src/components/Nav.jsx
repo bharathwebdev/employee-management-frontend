@@ -62,7 +62,7 @@ export default function SearchAppBar() {
     setname(e.target.value);
     }
     const handleSearch = ()=>{
-      axios.get(`http://localhost:8080/api/v1/employee/user?name=${name}&size=${10}`)
+      axios.get(`https://employee-management-vqs3.onrender.com/api/v1/employee/user?name=${name}&size=${10}`)
       .then(res=>setData(res.data));
     }
 

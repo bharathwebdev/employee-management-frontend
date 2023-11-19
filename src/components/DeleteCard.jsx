@@ -7,7 +7,7 @@ function DeleteCard() {
 
     const deleteEmployee = ()=>{
    console.log(selectEmp.id)
-   axios.delete("http://localhost:8080/api/v1/employee",{
+   axios.delete("https://employee-management-vqs3.onrender.com/api/v1/employee",{
     params:{
         id:selectEmp.id
     }
